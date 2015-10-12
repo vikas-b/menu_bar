@@ -1,0 +1,176 @@
+.wrapper {
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper .header {
+    height: 23px;
+    padding: 23px;
+    background-color: #0066FF;
+    color: #FFFFFF;
+    }
+.wrapper .menu {
+    height: 40px;
+    background-color: #FFFFFF;
+    padding: 5px;
+    }
+.wrapper .menu ul {
+    list-style: none;
+    float: right;
+    }
+.wrapper .menu ul li {
+    display: inline;
+    padding: 5px;
+    }
+.wrapper .menu ul li a {
+    color: #0066FF;
+    }
+
+.wrapper .form-content .content-menu {
+    height: 22px;
+    background-color: #0066FF;;
+    padding: 10px;
+    }
+.wrapper .form-content .content-menu ul {
+    list-style: none;
+    float: right;
+    margin: auto;
+    }
+.wrapper .form-content .content-menu ul li {
+    display: inline;
+    padding: 5px;
+    }
+.wrapper .form-content .content-menu ul li a {
+    color: #FFFFFF;
+    }
+
+.wrapper .form-content {
+    background-color: #ebebeb;
+    min-height: 10px;
+    padding-bottom: 40px;
+    }
+
+table {
+    margin-left: 30px;
+}
+table thead{
+    height: 20px;
+    background-color: #cccccc;
+}
+table thead tr th a{ 
+    color: #0066FF;
+}
+table thead tr th{
+    color: #0066FF;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+table tbody tr td{
+    text-align: center;
+}
+
+.gray{
+    color: #cccccc; 
+}
+
+
+h1{
+    font-size: 23px;
+    font-weight: normal;
+    padding-left: 10px;
+    line-height: normal;
+}
+
+
+.wrapper .form-content form{
+    padding-top: 25px;
+ 
+}
+.wrapper .form-content .form-label{
+    width: 275px;
+    padding-left: 10px;
+    padding-top: 18px;
+    padding-bottom: 7px;
+    float: left;
+}
+.wrapper .form-content label{
+    padding-left: 100px;
+}
+.wrapper .form-content .form-input{
+    width: 385px;
+    margin-left:  295px;
+    padding-top: 12px;
+    padding-bottom: 13px;
+}
+.wrapper .form-content .form-message{
+    width: 385px;
+    margin-left:  300px;
+    color: red;
+}
+.wrapper .form-content .form-button{
+    margin-left: 382px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+
+}
+.wrapper .form-content .label input{
+    margin-left: 150px;
+    width: 200px;
+}
+.wrapper .form-content .label p{
+    color: red;
+    margin-top: -22px;
+    margin-left: 455px;
+    width: 340px;
+}
+
+.wrapper .form-content .label1 input{
+    float: right;
+    width: 200px;
+}
+.wrapper .form-content .label textarea{
+    margin-left: 94px;
+    width: 200px;
+}
+.wrapper .form-content .label select{
+    float: right;
+    width: 208px;
+}
+.wrapper .form-content .pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.wrapper .form-content .pagination a{
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #b4b4b4;
+    text-decoration: none;
+    color: #222222;
+    padding: 2px;
+}
+.wrapper .form-content .pagination .active{
+    color: #0066FF;
+}
+
+
+.wrapper .footer {
+    height: 30px;
+    background-color: #0066FF;
+    padding-top: 10px;
+    }
+.wrapper .footer ul {
+    list-style: none;
+    margin: auto;
+    
+    }
+.wrapper .footer ul li {
+    display: inline;
+    padding: 5px;
+    }
+.wrapper .footer ul li a {
+    color: #FFFFFF;
+    }
+    
