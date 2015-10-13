@@ -8,7 +8,7 @@
     </head>
     
     <body>
-        <div class = "wrapper">
+        <div class = "wrapper" >
             <div class = "menu" id="showMenu">
 	       <ul>
 		   <li data-val="Accessories"> Accessories </li>
@@ -21,40 +21,11 @@
 	       </ul>
 	    </div>
 	    <div class="footer">
-		<img src= "<?php echo IMAGE_PATH;?>/start.jpg" id="start" height="59" width="170"  />
+		<img src= "<?php echo IMAGE_PATH;?>/start.jpg" id="start" data-clicked="true" height="59" width="170"  />
 	    </div>
 	</div>
 	
     <script type="text/javascript" src="<?php echo JS_PATH;?>/jquery-1.11.3.min.js" ></script>
-    <script type= "text/javascript">
-	$(document).ready(function(){
-	    $('li').click(function() {
-		alert($(this).data('val'));
-		$('#showMenu').hide();
-	    });
-	    
-	    $('#start').click(function () {
-		$('#showMenu').show();
-	    	
-	    });
-	    
-	    $('div.wrapper').click(function () {
-		    $('#showMenu').hide();
-		});
-	});
-	
-	
-	
-	function showHide()
-	{
-	    var menu = document.getElementById("showMenu");
-	    if (menu.style.display !== "block") {
-		menu.style.display = "block";
-	    }
-	    else {
-		menu.style.display = "none";
-	    }
-	}
-    </script>
+    <script type= "text/javascript" src="<?php echo JS_PATH;?>/common.js" ></script>
     </body>
 </html>
