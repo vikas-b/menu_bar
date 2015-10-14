@@ -22,7 +22,12 @@
     list-style: none;
 }
 li:hover{
-    background-color: #C0C0C0 ;
+    background-color: orange;
+}
+#show_dialog{
+    height: 300px;
+    width: 200px;
+    display: none;
 }
 .footer {
     width: 100%;

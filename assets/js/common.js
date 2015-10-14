@@ -1,7 +1,17 @@
 $(document).ready(function(){
     $('li').click(function() {
-	alert($(this).data('val'));
-	$('#showMenu').hide();
+	$( "#show_dialog" ).dialog({
+	    buttons: {
+	      "Load": function() {
+		$("#show_dialog").submit();
+		$( this ).dialog( "close" );
+		$('#showMenu').hide();
+	      },
+	      Cancel: function() {
+		$( this ).dialog( "close" );
+	      }
+	    }
+	});
     });
     
     $('#start').click(function() {

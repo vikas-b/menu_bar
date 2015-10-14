@@ -6,5 +6,5 @@
     define('JS_PATH', HTTP_PATH. '/assets/js');
     define('IMAGE_PATH', HTTP_PATH. '/assets/images');
     define('CSS_PATH', HTTP_PATH. '/assets/css');
-
+    define('SEARCH_PATH', $_SERVER['DOCUMENT_ROOT'] . '/learn');
 ?>
