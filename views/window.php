@@ -27,7 +27,7 @@
 		<input type = "text" name = "folder_name" id = "folder_name" />
 	    </form>
 	    <div class="footer">
-		<img src= "<?php echo IMAGE_PATH;?>/start.jpg" id="start" data-clicked="true" height="59" width="170"  />
+		<img src= "<?php echo IMAGE_PATH;?>/start.jpg" id="start" height="59" width="170"  />
 	    </div>
 	    
 	</div>

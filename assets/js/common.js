@@ -15,35 +15,25 @@ $(document).ready(function(){
     });
     
     $('#start').click(function() {
+	flag = 1;
 	if( $('#showMenu').is(":visible") )
 	{
-	    $('#showMenu').hide();
+	    $('#showMenu').hide(); 
 	}
 	else
 	{
 	    $('#showMenu').show();
-	    $('#start').data('clicked', true);
 	}
     });
     
-    
-//    $('body').click(function() {
-//	if(($('#start').data('clicked')))
-//	{
-//	    if( $('#showMenu').is(":visible") ) {
-//		console.log('f');
-//		$('#showMenu').hide();
-//		//$('#start').data('clicked', true);
-//	    }
-//	    else
-//	    {
-//		//$('#showMenu').show();
-//		$('#start').data('clicked', true);
-//	    }
-//	}
-//	else
-//	{
-//	    $('#showMenu').hide();
-//	}
-//    });
+    $(document).click(function() {
+	if(flag)
+	{
+	    flag = 0;
+	}
+	else
+	{
+	    $('#showMenu').hide();
+        }
+    });
 });
