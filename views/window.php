@@ -1,5 +1,4 @@
 <?php require_once("constant.php"); ?>
-<?php require_once("window_action.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html>
     <head>
@@ -11,7 +10,7 @@
     
     <body>
         <div class = "wrapper" >
-            <div class = "menu" id="showMenu">
+	    <div class = "menu" id="showMenu">
 	       <ul>
 		   <li data-val="Accessories"> Accessories </li>
 		   <li data-val="Games"> Games </li>
