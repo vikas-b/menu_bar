@@ -23,10 +23,11 @@
 	       </ul>
 	    </div>
 	    <form id="show_dialog" title="Enter the folder Name " data-url="<?php echo HTTP_PATH;?>/views/window_action.php" >
+		<div class="form">
 		    <label for = "folder_name" > Folder Name : </label>
 		    <input type = "text" name = "folder_name" id = "folder_name" />
-		    
-		    <div id="show_files"></div>
+		</div>    
+		<div id="show_files"></div>
 	    </form>
 	    <div class="footer">
 		<img src= "<?php echo IMAGE_PATH;?>/start.jpg" id="start" height="50" width="170"  />

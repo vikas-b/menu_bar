@@ -26,13 +26,26 @@ li:hover{
 #show_dialog{
     display: none;
 }
-.show_image{
+.form{
+    height: 40px;
+    width: 606px;
+    margin-bottom: 15px;
+    padding-left: 160px;
+    padding-top: 15px;
+    border: 1px solid #dddddd;
+}
+#show_files{
+    min-height: 50px;
+    width:760px;
+    padding: 5px;
+}
+#show_files .show_image{
     cursor: pointer;
     margin: 10px; 
     height : 80px;
-    width: 100px;
+    width: 126px;
     padding: 3px;
-    float: left; 
+    float: left;  
 }
 .no_record{
     margin: 30px;
@@ -43,7 +56,7 @@ li:hover{
     position: absolute;
     bottom: 0;
     height:50px;  
-    background:#0066FF;
+    background:#0033FF;
 }
 .footer img{
     cursor: pointer;
