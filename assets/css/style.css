@@ -27,12 +27,23 @@ li:hover{
     display: none;
 }
 .form{
-    height: 40px;
-    width: 606px;
+    height: 60px;
+    width: 750px;
     margin-bottom: 15px;
-    padding-left: 160px;
+    padding-left: 20px;
     padding-top: 15px;
     border: 1px solid #dddddd;
+}
+#create_dialog{
+    display: none;
+}
+.form .img{
+    padding-left: 15px;
+    display: none;
+}
+.form .back{
+    padding-left: 15px;
+    display: none;
 }
 #show_files{
     min-height: 50px;

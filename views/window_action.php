@@ -4,6 +4,32 @@
     {
 	$file_to_search  	= isset($_POST['folder_name']) ? $_POST['folder_name'] : '';
 	
+	file_to_search($file_to_search);
+    }
+    
+    if( isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'create' && !empty($_POST['path']))
+    {
+	$file_to_create  	= isset($_POST['folder_name']) ? $_POST['folder_name'] : '';
+	$file_to_search  	= isset($_POST['path']) ? $_POST['path'] : '';
+	
+	$create_directory = $file_to_search.$file_to_create;
+	
+	if (!file_exists($create_directory)) { 
+	    $result = mkdir( $create_directory);
+	    if ($result == 1)
+	    {
+		file_to_search($file_to_search);
+	    }
+	}
+	else
+	{
+	    echo 0;
+	}
+	die;
+    }
+    
+    function file_to_search($file_to_search)
+    {
 	if(strstr($file_to_search, '/'))
 	{
 	    $is_folder  =   explode("/", $file_to_search);
@@ -11,8 +37,8 @@
 	    {
 		if(($is_folder[count($is_folder) - 1]) == null)
 		{
-		    $file_to_search = substr($file_to_search, 0, -1);
-		    $last_dir  =   end(explode("/", $file_to_search));
+		    $file_to_search 	= substr($file_to_search, 0, -1);
+		    $last_dir  		=   end(explode("/", $file_to_search));
 		}
 		else
 		{
@@ -27,13 +53,10 @@
 		}
 		else
 		{
-		    echo '<div class="no_record">no folder found</div>';
+		    echo 1;
 		}
 	    }
-	    else
-	    {
-		echo '<div class="no_record">please enter exact path</div>';
-	    }
+	    die;
 	}
 	else
 	{
@@ -45,10 +68,13 @@
 	    }
 	    else
 	    {
-		echo '<div class="no_record">no folder found</div>';
+		echo 1;
 	    }
 	}
+	die;
     }
+    
+    
     
     function search_records($path, $records,  $file_to_search)
     {
@@ -114,7 +140,7 @@
 					echo '<img src='.IMAGE_PATH.'/icons/icon-xls-txt.png height="22" width="22">';
 					break;
 				case "php" :
-					echo '<img src='.IMAGE_PATH.'/icons/icon-doc-other.png height="32" width="32">';
+					echo '<img src='.IMAGE_PATH.'/icons/php.ico height="32" width="32">';
 					break;
 				case "js" :
 					echo '<img src='.IMAGE_PATH.'/icons/js.png height="32" width="32">';
@@ -128,6 +154,7 @@
 			    echo '</div>';
 			} 
 		    }
+		    echo '<input type = "hidden" name = "path" id = "path" value='.$single_path.'/>';
 		    $record = 1;
 		    break;
 		}
@@ -135,7 +162,7 @@
 	}
 	if(!$record)
 	{
-	    echo '<div class="no_record">no folder found</div>';
+	    echo 1;
 	}
     }
     
