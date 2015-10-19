@@ -45,9 +45,13 @@ li:hover{
     padding-left: 15px;
     display: none;
 }
+.form .loading{
+    padding-right: 20px;
+    float: right;
+    display: none;
+}
 #show_files{
-    min-height: 50px;
-    width:760px;
+    
     padding: 5px;
 }
 #show_files .show_image{
@@ -57,10 +61,6 @@ li:hover{
     width: 126px;
     padding: 3px;
     float: left;  
-}
-.no_record{
-    margin: 30px;
-    text-align: center;
 }
 .footer {
     width: 100%;

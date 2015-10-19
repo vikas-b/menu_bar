@@ -30,9 +30,11 @@ $(document).ready(function(){
 		    "Create": function()
 		    {
 			$( "#show_dialog" ).dialog("close");
+			
 			var directory_name 	= document.getElementById('directory_name').value;
 			var action		= 'create';
 			var path		= document.getElementById('path').value;
+			
 			commonFunction(directory_name, action, path);
 			$( this ).dialog("close");
 			$( "#show_dialog" ).dialog("open");
@@ -42,6 +44,59 @@ $(document).ready(function(){
 		    {
 			$( this ).dialog( "close" );
 		    }
+		}
+	    });
+	});
+	
+	$(document).on('dblclick', '.show_image img', function() {
+	    
+	    var thisObj 	= $(this);
+	    var url 		= thisObj.data('url');
+	    var action		= 'open';
+	    var path		= document.getElementById('path').value;
+	    var directory_name 	= thisObj.data('file');
+	    var dataString	= 'folder_name='+ directory_name +'&action='+ action +'&path='+ path;
+	    $('.loading').show();
+	    $.ajax({
+		url		: url,
+		data		: dataString,
+		type		: 'POST',
+		success		: function(data) {
+		    console.log(data);
+		    if (data == 1)
+		    {
+			alert('this is empty directory');
+			$('.loading').hide();
+		    }
+		    else
+		    {
+			$("#show_files").html(data);
+			$('.back').show();
+			$('.img').show();
+			$('.loading').hide();
+		    }
+		}
+	    });
+	});
+	
+	
+	$(document).on('click', '.back', function() {
+	    $('.loading').show();
+	    var thisObj 	= $(this);
+	    var url 		= thisObj.data('url');
+	    var action		= 'back';
+	    var path		= document.getElementById('path').value;
+	    var dataString	= 'action='+ action +'&path='+ path;
+	    $.ajax({
+		url		: url,
+		data		: dataString,
+		type		: 'POST',
+		success		: function(data) {
+		    console.log(data);
+		    $("#show_files").html(data);
+		    $('.back').show();
+		    $('.img').show();
+		    $('.loading').hide();
 		}
 	    });
 	});
@@ -72,6 +127,7 @@ $(document).ready(function(){
 	
 	function checkSlash(thisObj, url, folder_name, action, dataString)
 	{
+	    $('.loading').show();
 	    $.ajax({
 		url		: url,
 		data		: dataString,
@@ -83,18 +139,21 @@ $(document).ready(function(){
 			$("#show_files").html('<div> No record found</div>');
 			$('.back').hide();
 			$('.img').hide();
+			$('.loading').hide();
 		    }
 		    else
 		    {
 			if (data == 0)
 			{
 			    alert("This directory alredy exists");
+			    $('.loading').hide();
 			}
 			else
 			{
 			    $("#show_files").html(data);
 			    $('.back').show();
-			    $('.img').show();    
+			    $('.img').show();
+			    $('.loading').hide();
 			}
 		    }
 		    

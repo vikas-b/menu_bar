@@ -28,6 +28,7 @@
 		    <input type = "text" name = "folder_name" id = "folder_name" />
 		    <img class="back" src="<?php echo IMAGE_PATH;?>/Button-Back-icon.png" height="32" width="32" title="Back">
 		    <img class="img" src="<?php echo IMAGE_PATH;?>/folder.png" height="32" width="32" title="create new folder">
+		    <img class="loading" src="<?php echo IMAGE_PATH;?>/ajax-loading.gif" height="46" width="46" >
 		</div>
 		<div id="create_dialog" title="create directory">
 		    <label for = "directory_name" > Directory Name : </label>
@@ -44,6 +45,7 @@
 	
     <script type="text/javascript" src="<?php echo JS_PATH;?>/jquery-1.11.3.min.js" ></script>
     <script type="text/javascript" src="<?php echo JS_PATH;?>/jquery_ui/jquery-ui.js" ></script>
+    <script type="text/javascript" src="<?php echo JS_PATH;?>/ajax_loading/ajax-loading.js" ></script>
     <script type= "text/javascript" src="<?php echo JS_PATH;?>/common.js" ></script>
     </body>
 </html>

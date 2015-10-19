@@ -7,6 +7,15 @@
 	file_to_search($file_to_search);
     }
     
+    if( isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'back' && !empty($_POST['path']))
+    {
+	$file_to_search  	= isset($_POST['path']) ? $_POST['path'] : '';
+	$file_to_search  =   explode("/", $file_to_search);
+	array_splice($file_to_search, -2, 2);
+	$file_to_search  =   implode("/", $file_to_search);
+	file_to_search($file_to_search);
+    }
+    
     if( isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'create' && !empty($_POST['path']))
     {
 	$file_to_create  	= isset($_POST['folder_name']) ? $_POST['folder_name'] : '';
@@ -24,6 +33,22 @@
 	else
 	{
 	    echo 0;
+	}
+	die;
+    }
+    
+    if( isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'open' && !empty($_POST['path']))
+    {
+	$folder_name  	= isset($_POST['folder_name']) ? $_POST['folder_name'] : '';
+	$path  		= isset($_POST['path']) ? $_POST['path'] : '';
+	$open_directory = $path.$folder_name;
+	if(count(glob($open_directory."*"))==0)
+	{
+	    opendir();
+	}
+	else
+	{
+	    file_to_search($open_directory);
 	}
 	die;
     }
@@ -96,8 +121,8 @@
 			if (is_Dir($filename)) 
 			{
 			    echo '<div class="show_image" data-url='.HTTP_PATH.'/views/window_action.php>';
-			    echo '<img src='.IMAGE_PATH.'/icons/folder.png height="32" width="32" data-path='.$filename.'>';
-			    echo '<div class="content_name">'.$file_name.'</div>';
+			    echo '<img src='.IMAGE_PATH.'/icons/folder.png height="32" width="32" data-file='.$file_name.'>';
+			    echo '<div>'.$file_name.'</div>';
 			    echo '</div>';
 			}
 			else
