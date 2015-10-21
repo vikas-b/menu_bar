@@ -1,38 +1,74 @@
-.wrapper {
-    height: 100%;
+body{
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 .menu{
     display: none;
     position: absolute;
+    background:#3D3C3A;
     height: 400px;
     bottom: 0;
     border: 1px solid black;
 }
-.menu ul{
-    width: 150px;
-    background: #FFFFFF;
-}
 .menu ul li{
+    cursor: pointer;
+    color: white;
     padding: 4px; 
     height:30px;
     width: 140px;
     list-style: none;
 }
 li:hover{
-    background-color: orange;
+    background-color: #FF8040;
 }
 #show_dialog{
-    height: 300px;
-    width: 200px;
     display: none;
+}
+.form{
+    height: 60px;
+    width: 750px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    padding-top: 15px;
+    border: 1px solid #dddddd;
+}
+#create_dialog{
+    display: none;
+}
+.form .img{
+    padding-left: 15px;
+    display: none;
+}
+.form .back{
+    padding-left: 15px;
+    display: none;
+}
+.form .loading{
+    padding-right: 20px;
+    float: right;
+    display: none;
+}
+#show_files{
+    
+    padding: 5px;
+}
+#show_files .show_image{
+    cursor: pointer;
+    margin: 10px; 
+    height : 80px;
+    width: 126px;
+    padding: 3px;
+    float: left;  
 }
 .footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height:59px;  
-    background:#0066FF;
+    height:50px;  
+    background:#0033FF;
+}
+.footer img{
+    cursor: pointer;
 }
